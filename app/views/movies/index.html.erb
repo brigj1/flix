@@ -3,7 +3,14 @@
   <li>
     <%# Iron Man (PG-13): $585,366,247 %>
     <strong><%= movie.title %></strong> (<%= movie.rating %>): 
-      <%= number_to_currency(movie.total_gross, precision: 0) %>
+      <%# number_to_currency(movie.total_gross, precision: 0) %>
+      <%= total_gross(movie) %>
+    <p>
+      <%= truncate(movie.description, length: 40, separator: ' ') %>
+    </p>
+    <p>
+      Released in: <%= year_of(movie) %>
+    </p>
   </li>
 <% end %>
 </ul>
